@@ -98,12 +98,22 @@ app.patch("/api/employees/:id", async (req, res, next) => {
 
   try {
     const updated = await req.employee.set(employee).save();
-    console.log("!!!!!!!! ", updated);
     return res.json(updated);
   } catch (err) {
     return next(err);
   }
 });
+
+app.patch("/api/employeeHeight/:id", async (req, res, next) => {
+  console.log(req.params.id)
+const employee = await EmployeeModel.findById(req.params.id)
+
+  employee.height = req.body.height;
+  employee.save();
+  res.json(employee)
+  }
+);
+
 
 app.patch("/api/equipments/:id", async (req, res, next) => {
   try {

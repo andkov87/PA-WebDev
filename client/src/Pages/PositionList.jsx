@@ -14,11 +14,10 @@ const EmployeePositionList = () => {
   const [loading, setLoading] = useState(true);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [data, setData] = useState(null);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
 
   const handleChangePosition = (employee) => {
-    console.log("list: ", employee)
     fetch(`/api/employees/${employee._id}`, { 
       method: 'PATCH',
       headers: {

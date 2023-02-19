@@ -43,7 +43,7 @@ const EmployeeList = () => {
 
 // const saveHeight = (id) => {
 //   randomNr()
-//   updateBoolean(id)
+// 
 // }
 
   const handleChangeBoolean = (employee, id) => {
