@@ -20,7 +20,6 @@ if (!mongoUrl) {
 
 const pick = (from) => from[Math.floor(Math.random() * (from.length - 0))];
 
-/*
 const splitedNames = names.map(name =>  {
   const nameSplit = name.split(' ');
    
@@ -38,12 +37,14 @@ const splitedNames = names.map(name =>  {
     }
   }
 })
-*/
+
 const populateEmployees = async () => {
   await EmployeeModel.deleteMany({});
 
-  const employees = names.map((name) => ({
-    name: name,
+  const employees = splitedNames.map((name) => ({
+    firstName: name.firstName,
+    middleName: name.middleName,
+    lastName: name.lastŃame,
     level: pick(levels),
     position: pick(positions),
     present: false

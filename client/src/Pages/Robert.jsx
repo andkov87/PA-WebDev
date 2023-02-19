@@ -3,8 +3,7 @@ import Loading from "../Components/Loading";
 import EmployeeTable from "../Components/EmployeeTable";
 
 const fetchEmployees = (signal) => {
-  return fetch('/robert', { signal })
-  .then((res) => res.json());
+  return fetch('/robert', { signal }).then((res) => res.json());
 };
 
 const deleteEmployee = (id) => {

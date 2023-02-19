@@ -18,7 +18,7 @@ const fetchEmployee = (id) => {
   return fetch(`/api/employees/${id}`).then((res) => res.json());
 };
 
-const fetchEquipments = () => {
+const fetchEquipment = () => {
   return fetch(`/api/equipments/`).then((res) => res.json());
 };
 
@@ -42,17 +42,17 @@ const EmployeeUpdater = () => {
       .catch((error) => {
         throw error;
       });
-
-      fetchEquipments()
+    fetchEquipment()
       .then((equipments) => {
-        setEquipments(equipments);        
+        setEquipments(equipments);
+
       })
       .catch((error) => {
         throw error;
       });
-      
+
   }, [id]);
-  
+
 
   const handleUpdateEmployee = (employee) => {
     setUpdateLoading(true);

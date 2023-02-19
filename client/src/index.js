@@ -14,7 +14,7 @@ import EquipmentList from './Pages/Equipments';
 import EqLayout from "./Pages/Layout/EqLayout";
 import EquipmentCreator from './Pages/EquipmentCreator';
 import EquipmentUpdater from './Pages/EquipmentUpdater';
-import EmployeePositionList from "./Pages/PositionList";
+import NameList from "./Pages/NameList";
 
 import "./index.css";
 import TableTest from "./Pages/TableTest";
@@ -35,12 +35,12 @@ const router = createBrowserRouter([
         element: <RobertList/>,
       },
       {
-        path:'/positions',
-        element: <EmployeePositionList/>,
-      },
-      {
         path:'/missing',
         element: <MissingList/>,
+      },
+      {
+        path:'/namelist',
+        element: <NameList/>,
       },
       {
         path: "/create",

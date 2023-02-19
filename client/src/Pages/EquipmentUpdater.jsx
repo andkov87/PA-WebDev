@@ -21,6 +21,7 @@ const fetchEquipment = (id) => {
 const EquipmentUpdater = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const [equipment, setEquipment] = useState(null);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [equipmentLoading, setEquipmentLoading] = useState(true);

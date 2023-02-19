@@ -59,17 +59,22 @@ app.get("/api/equipments/:id", async (req, res) => {
 app.get('/robert', async (req, res) => {
   const roberts = await EmployeeModel.find({firstName: /^Robert/})
   return res.json(roberts)
-})
 
-app.get('/positions', async (req, res) => {
-  const positions = await EmployeeModel.find()
-  return res.json(positions)
 })
 
 app.get('/missing', async (req, res) => {
   const missingEmployee = await EmployeeModel.find({present: false})
   return res.json(missingEmployee)
 })
+
+app.get("/api/filteredEmployees/:id", async (req, res, next) => {
+    try {
+      const sortEmployees = await EmployeeModel.find({position: req.params.position, level: req.params.level});     
+      return res.json(sortEmployees);
+    } catch (err) {
+      return next(err);
+    }
+  });
 
 app.post("/api/employees/", async (req, res, next) => {
   const employee = req.body;
@@ -104,21 +109,9 @@ app.patch("/api/employees/:id", async (req, res, next) => {
   }
 });
 
-app.patch("/api/employeeHeight/:id", async (req, res, next) => {
-  console.log(req.params.id)
-const employee = await EmployeeModel.findById(req.params.id)
-
-  employee.height = req.body.height;
-  employee.save();
-  res.json(employee)
-  }
-);
-
-
 app.patch("/api/equipments/:id", async (req, res, next) => {
   try {
     const equipment = await EquipmentModel.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}); 
-    console.log(equipment)
     return res.json(equipment);
   } catch (err) {
     return next(err);

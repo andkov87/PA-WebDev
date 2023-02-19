@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const EmployeeSchema = new Schema({
-  name: String,
+  firstName: String,
+  middleName: String,
+  lastName: String,
   level: String,
   position: String,
   present: Boolean,
@@ -12,7 +14,6 @@ const EmployeeSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  height: Number,
 });
 
 module.exports = mongoose.model("Employee", EmployeeSchema);
