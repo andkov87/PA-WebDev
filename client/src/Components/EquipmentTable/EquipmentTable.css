@@ -1,0 +1,11 @@
+.EquipmentTable {
+    padding: 0.5rem;
+    align-items: center;
+  }
+  
+  .EquipmentTable input{
+    margin-left: 10px;
+    margin-bottom: 8px;
+    width: 40%;
+  }
+  

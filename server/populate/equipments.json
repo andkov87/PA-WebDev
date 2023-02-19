@@ -1,0 +1,20 @@
+[{
+    "name": "desk",
+    "type": "furniture",
+    "amount": 10
+},
+{
+    "name": "pen",
+    "type": "tool",
+    "amount": 56
+},
+{
+    "name": "monitor",
+    "type": "screen",
+    "amount": 27
+},
+{
+    "name": "Iphone-14",
+    "type": "mobilephone",
+    "amount": 16
+}]

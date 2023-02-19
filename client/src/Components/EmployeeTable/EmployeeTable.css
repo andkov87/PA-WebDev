@@ -1,0 +1,10 @@
+.EmployeeTable {
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.EmployeeTable input{
+  margin-left: 10px;
+  margin-bottom: 8px;
+  width: 40%;
+}
